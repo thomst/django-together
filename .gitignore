@@ -1,0 +1,12 @@
+__pycache__/
+.python-version
+db.sqlite3*
+/.coverage
+/.coveralls.yml
+/*.sh
+/together.egg-info/
+/build/
+/dist/
+/.tox/
+/.vscode/
+my.cnf
