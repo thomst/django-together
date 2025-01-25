@@ -4,7 +4,7 @@ db.sqlite3*
 /.coverage
 /.coveralls.yml
 /*.sh
-/together.egg-info/
+/django_together.egg-info/
 /build/
 /dist/
 /.tox/
