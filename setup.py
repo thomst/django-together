@@ -34,6 +34,7 @@ setup(
     version=get_version,
     description="Deadly simple and easy to use money split app.",
     long_description=read("README.md"),
+    long_description_content_type='text/markdown',
     author="Thomas Leichtfuß",
     author_email="thomas.leichtfuss@posteo.de",
     url="https://github.com/thomst/django-together",
