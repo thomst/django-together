@@ -2,13 +2,14 @@
 from django.test import TestCase
 from django.contrib.auth.models import User
 from django.urls import reverse
+from django.conf import settings
 from together.models import Expense
 from together.models import Calculation
 from together.utils import get_balance
 
 
 class CalculationTestCase(TestCase):
-    fixtures = ['homecash/fixtures/testdata.json']
+    fixtures = [settings.BASE_DIR / 'fixtures/testdata']
 
     def setUp(self):
         self.admin = User.objects.get(username='admin')
