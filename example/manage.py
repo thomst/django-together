@@ -3,6 +3,9 @@
 import os
 import sys
 
+# expand pythonpath
+sys.path.insert(0, os.path.realpath(os.path.join(os.path.dirname(__file__), '..')))
+
 
 def main():
     """Run administrative tasks."""
