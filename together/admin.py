@@ -32,7 +32,7 @@ class CalculationAdmin(admin.ModelAdmin):
                 super().save_model(request, obj, form, change)
                 obj.expenses.add(*expenses)
             else:
-                self.message_user(request, "There are no open expenses.", messages.ERROR)
+                self.message_user(request, _("There are no open expenses."), messages.ERROR)
 
 
 @admin.register(Expense)
