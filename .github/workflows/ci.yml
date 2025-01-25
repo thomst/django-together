@@ -54,7 +54,7 @@ jobs:
         pip install --editable ./
 
     - name: Run Tests
-      run: coverage run --source=csvexport/ example/manage.py test homecash
+      run: coverage run --source=together/ example/manage.py test homecash
 
     - name: Create coverage lcov file
       run: coverage lcov -o coverage.lcov
