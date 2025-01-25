@@ -5,7 +5,7 @@ Welcome to django-together
 
 Description
 ===========
-Super simple django application to split money.
+Share expenses with friends and family using a super simple django application.
 
 
 Setup
