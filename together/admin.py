@@ -4,7 +4,6 @@ from django.contrib.messages import constants as messages
 from .models import Calculation
 from .models import Expense
 from .forms import ExpenseForm
-from .utils import get_balance
 
 
 @admin.register(Calculation)
