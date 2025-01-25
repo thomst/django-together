@@ -49,7 +49,7 @@ class ExpenseAdmin(admin.ModelAdmin):
         }),
         (_('Advanced Options'), {
             "classes": ["collapse"],
-            "fields": ['paid_on', 'info'],
+            "fields": ['info', 'paid_on'],
         }),
     )
     list_display = [
