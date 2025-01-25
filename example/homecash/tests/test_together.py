@@ -6,6 +6,7 @@ from django.conf import settings
 from together.models import Expense
 from together.models import Calculation
 from together.utils import get_balance
+from together.__version__ import __version__
 
 
 class CalculationTestCase(TestCase):
@@ -94,3 +95,26 @@ class CalculationTestCase(TestCase):
         calculation = Calculation.objects.all().first()
         self.assertListEqual(list(calculation.expenses.all()), open_expenses)
         self.assertFalse(Expense.objects.filter(calculation=None))
+
+    def test_05_calculation_on_save_without_expenses(self):
+        """
+        Check if saving a calculation is prevented if no open expenses exists.
+        """
+        calculations_before = Calculation.objects.all().count()
+        Expense.objects.all().delete()
+        add_url = reverse('admin:together_calculation_add')
+        response = self.client.post(add_url, follow=True)
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, "There are no open expenses.")
+        calculations_after = Calculation.objects.all().count()
+        self.assertEqual(calculations_before, calculations_after)
+
+    def test_06_calculation_add_form_without_expenses(self):
+        """
+        Check if saving a calculation is prevented if no open expenses exists.
+        """
+        Expense.objects.all().delete()
+        add_url = reverse('admin:together_calculation_add')
+        response = self.client.get(add_url)
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, "There are no open expenses.")
